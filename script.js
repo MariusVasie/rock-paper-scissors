@@ -17,8 +17,8 @@ function getComputerChoice() {
         computerChoice = "scissors";
     }
     console.log('Comoputer choice is ', computerChoice);
+    return computerChoice;
   }
-getComputerChoice();
 
 /*
 Stage 2 - Getting the human choice
@@ -28,10 +28,15 @@ Log the option chosen by the user
 */
 
 function getHumanChoice() {
-    let humanChoice = prompt("Choose between rock, paper and scissors");
-    console.log('Human choice is ', humanChoice);
+    let promptValue = prompt("Choose between rock, paper and scissors");
+    let humanChoice = promptValue.toLowerCase();
+    if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors")  {
+        console.log('Human choice is ', humanChoice);
+    } else {
+        alert("Your choice is not valid");
+    }
+    return humanChoice;
 }
-getHumanChoice();
 
 let humanScore = 0;
 let computerScore = 0;
@@ -43,6 +48,8 @@ Add a point to the winner
 */
 
 function playRound(humanChoice, computerChoice) {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
     if (humanChoice == "rock") {
         if (computerChoice == "paper") {
             computerScore++;
@@ -63,5 +70,22 @@ function playRound(humanChoice, computerChoice) {
         } else {
             console.log("It's a tie");
         }
+    } else if (humanChoice == "scissors") {
+        if (computerChoice == "rock") {
+            humanScore++;
+            console.log("User wins");
+        } else if (computerChoice == "paper") {
+            computerScore++;
+            console.log("Computer wins");
+        } else {
+            console.log("It's a tie");
+        }
+    } else {
+        alert("Your choice is not valid");
     }
+    console.log("Human score:", humanScore, "Computer score:", computerScore);
   }
+
+  playRound();
+
+  /* Stage 4 - Playing the game 5 times */
