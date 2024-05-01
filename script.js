@@ -16,7 +16,7 @@ function getComputerChoice() {
     } else {
         computerChoice = "scissors";
     }
-    console.log('Comoputer choice is ', computerChoice);
+    console.log("Comoputer's choice is ", computerChoice);
     return computerChoice;
   }
 
@@ -31,15 +31,12 @@ function getHumanChoice() {
     let promptValue = prompt("Choose between rock, paper and scissors");
     let humanChoice = promptValue.toLowerCase();
     if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors")  {
-        console.log('Human choice is ', humanChoice);
+        console.log('Your choice is ', humanChoice);
     } else {
         alert("Your choice is not valid");
     }
     return humanChoice;
 }
-
-let humanScore = 0;
-let computerScore = 0;
 
 /*
 Stage 3 - Playing a single round
@@ -56,14 +53,14 @@ function playRound(humanChoice, computerChoice) {
             console.log("Computer wins");
         } else if (computerChoice == "scissors") {
             humanScore++;
-            console.log("User wins");
+            console.log("You win");
         } else {
             console.log("It's a tie");
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             humanScore++;
-            console.log("User wins");
+            console.log("You win");
         } else if (computerChoice == "scissors") {
             computerScore++;
             console.log("Computer wins");
@@ -73,7 +70,7 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
             humanScore++;
-            console.log("User wins");
+            console.log("You win");
         } else if (computerChoice == "paper") {
             computerScore++;
             console.log("Computer wins");
@@ -83,9 +80,56 @@ function playRound(humanChoice, computerChoice) {
     } else {
         alert("Your choice is not valid");
     }
-    console.log("Human score:", humanScore, "Computer score:", computerScore);
+    console.log("Your score:", humanScore, "Computer's score:", computerScore);
   }
 
-  playRound();
-
   /* Stage 4 - Playing the game 5 times */
+
+  function playGame(gameRuns=5) {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (let step = 0; step < gameRuns; step++) {
+        function playRound(humanChoice, computerChoice) {
+            humanChoice = getHumanChoice();
+            computerChoice = getComputerChoice();
+            if (humanChoice == "rock") {
+                if (computerChoice == "paper") {
+                    computerScore++;
+                    console.log("Computer wins");
+                } else if (computerChoice == "scissors") {
+                    humanScore++;
+                    console.log("User wins");
+                } else {
+                    console.log("It's a tie");
+                }
+            } else if (humanChoice == "paper") {
+                if (computerChoice == "rock") {
+                    humanScore++;
+                    console.log("User wins");
+                } else if (computerChoice == "scissors") {
+                    computerScore++;
+                    console.log("Computer wins");
+                } else {
+                    console.log("It's a tie");
+                }
+            } else if (humanChoice == "scissors") {
+                if (computerChoice == "rock") {
+                    humanScore++;
+                    console.log("User wins");
+                } else if (computerChoice == "paper") {
+                    computerScore++;
+                    console.log("Computer wins");
+                } else {
+                    console.log("It's a tie");
+                }
+            } else {
+                alert("This round is invalid");
+            }
+            console.log("Your score:", humanScore, "Computer's score:", computerScore);
+          }
+          playRound();
+      }
+  }
+
+  playGame();
