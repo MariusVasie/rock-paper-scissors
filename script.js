@@ -83,53 +83,57 @@ function playRound(humanChoice, computerChoice) {
     console.log("Your score:", humanScore, "Computer's score:", computerScore);
   }
 
+
+
+
+  
   /* Stage 4 - Playing the game 5 times */
 
-  function playGame(gameRuns=5) {
-    let humanScore = 0;
-    let computerScore = 0;
+//   function playGame(gameRuns=5) {
+//     let humanScore = 0;
+//     let computerScore = 0;
 
-    for (let step = 0; step < gameRuns; step++) {
-        function playRound(humanChoice, computerChoice) {
-            humanChoice = getHumanChoice();
-            computerChoice = getComputerChoice();
-            if (humanChoice == "rock") {
-                if (computerChoice == "paper") {
-                    computerScore++;
-                    console.log("Computer wins");
-                } else if (computerChoice == "scissors") {
-                    humanScore++;
-                    console.log("User wins");
-                } else {
-                    console.log("It's a tie");
-                }
-            } else if (humanChoice == "paper") {
-                if (computerChoice == "rock") {
-                    humanScore++;
-                    console.log("User wins");
-                } else if (computerChoice == "scissors") {
-                    computerScore++;
-                    console.log("Computer wins");
-                } else {
-                    console.log("It's a tie");
-                }
-            } else if (humanChoice == "scissors") {
-                if (computerChoice == "rock") {
-                    humanScore++;
-                    console.log("User wins");
-                } else if (computerChoice == "paper") {
-                    computerScore++;
-                    console.log("Computer wins");
-                } else {
-                    console.log("It's a tie");
-                }
-            } else {
-                alert("This round is invalid");
-            }
-            console.log("Your score:", humanScore, "Computer's score:", computerScore);
-          }
-          playRound();
-      }
-  }
+//     for (let step = 0; step < gameRuns; step++) {
+//         function playRound(humanChoice, computerChoice) {
+//             humanChoice = getHumanChoice();
+//             computerChoice = getComputerChoice();
+//             if (humanChoice == "rock") {
+//                 if (computerChoice == "paper") {
+//                     computerScore++;
+//                     console.log("Computer wins");
+//                 } else if (computerChoice == "scissors") {
+//                     humanScore++;
+//                     console.log("User wins");
+//                 } else {
+//                     console.log("It's a tie");
+//                 }
+//             } else if (humanChoice == "paper") {
+//                 if (computerChoice == "rock") {
+//                     humanScore++;
+//                     console.log("User wins");
+//                 } else if (computerChoice == "scissors") {
+//                     computerScore++;
+//                     console.log("Computer wins");
+//                 } else {
+//                     console.log("It's a tie");
+//                 }
+//             } else if (humanChoice == "scissors") {
+//                 if (computerChoice == "rock") {
+//                     humanScore++;
+//                     console.log("User wins");
+//                 } else if (computerChoice == "paper") {
+//                     computerScore++;
+//                     console.log("Computer wins");
+//                 } else {
+//                     console.log("It's a tie");
+//                 }
+//             } else {
+//                 alert("This round is invalid");
+//             }
+//             console.log("Your score:", humanScore, "Computer's score:", computerScore);
+//           }
+//           playRound();
+//       }
+//   }
 
-  playGame();
+//   playGame();
