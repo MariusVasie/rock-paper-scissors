@@ -31,15 +31,12 @@ function getComputerChoice() {
     } else {
         computerChoice = "scissors";
     }
-    // console.log("Comoputer's choice is ", computerChoice);
     return computerChoice;
   }
 
 function getHumanChoice(e) {
-    // let promptValue = prompt("Choose between rock, paper and scissors");
     let humanChoice = e.target.innerText.toLowerCase();
     if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors")  {
-        // console.log('Your choice is', humanChoice);
     } else {
         alert("Your choice is not valid");
     }
@@ -54,46 +51,37 @@ function playRound(e) {
     if (humanChoice == "rock") {
         if (computerChoice == "paper") {
             computerScore++;
-            // console.log("Computer wins");
             roundWinner.textContent = "Computer";
             computerRoundScore.textContent = computerScore;
         } else if (computerChoice == "scissors") {
             humanScore++;
-            // console.log("You win");
             roundWinner.textContent = "You";
             humanRoundScore.textContent = humanScore;
         } else {
-            // console.log("It's a tie");
             roundWinner.textContent = "It's a tie";
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             humanScore++;
-            // console.log("You win");
             roundWinner.textContent = "You";
             humanRoundScore.textContent = humanScore;
         } else if (computerChoice == "scissors") {
             computerScore++;
-            // console.log("Computer wins");
             roundWinner.textContent = "Computer";
             computerRoundScore.textContent = computerScore;
         } else {
-            // console.log("It's a tie");
             roundWinner.textContent = "It's a tie";
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
             humanScore++;
-            // console.log("You win");
             roundWinner.textContent = "You";
             humanRoundScore.textContent = humanScore;
         } else if (computerChoice == "paper") {
             computerScore++;
-            // console.log("Computer wins");
             roundWinner.textContent = "Computer";
             computerRoundScore.textContent = computerScore;
         } else {
-            // console.log("It's a tie");
             roundWinner.textContent = "It's a tie";
         }
     } else {

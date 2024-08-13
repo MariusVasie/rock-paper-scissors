@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Rock Paper Scissors Game</h1>
-    <h2>Choose one option</h2>
-    <section class="options">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <section class="options-section">
+        <h2>Choose one option</h2>
+        <div class="options">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>   
     </section>
-    <h2>Results:</h2>
-    <section class="results">
-        <div class="human-choice">Your choice: <span id="human-choice"></span></div>
-        <div class="computer-choice">Computer's choice: <span id="computer-choice"></span></div>
-        <div class="round-winner">Round winner: <span id="round-winner"></span></div>
+    <section class="results-section">
+        <h2>Results:</h2>
+        <div class="results">
+            <div class="human-choice">Your choice: <span id="human-choice"></span></div>
+            <div class="computer-choice">Computer's choice: <span id="computer-choice"></span></div>
+            <div class="round-winner">Round winner: <span id="round-winner"></span></div>
+        </div>
     </section>
-    <h2>Score:</h2>
-    <section class="results">
-        <div class="human-score">Your points: <span id="human-score"></span></div>
-        <div class="computer-score">Computer's points: <span id="computer-score"></span></div>
+    <section class="score-section">
+        <h2>Score:</h2>
+        <div class="score">
+            <div class="human-score">Your points: <span id="human-score"></span></div>
+            <div class="computer-score">Computer's points: <span id="computer-score"></span></div>
+        </div>
+        <h2 id="game-winner"></h2>
     </section>
-    <h2 id="game-winner"></h2>
     <section class="reset">
         <button id="reset">Reset game</button>
     </section>
