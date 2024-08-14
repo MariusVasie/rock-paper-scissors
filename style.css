@@ -60,17 +60,18 @@
   h1 {
     margin-bottom: 32px;
   }
-  h2 {
+  h2, h3 {
     text-align: center;
   }
   span {
-    color: red;
+    color: #22817c;
   }
 
   button {
     padding: 8px 32px;
     background-color:lightseagreen;
     border: 0;
+    cursor:pointer;
   }
   button:hover {
     background-color: darkcyan;
@@ -87,17 +88,14 @@
   }
 
   .results {
-    margin-top: 16px;
-    padding: 16px;
+    padding: 0 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap:32px;
-    margin-bottom: 32px;
   }
 
   .score {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,12 +103,15 @@
   }
 
   .options-section, .results-section, .score-section {
-    margin-top: 16px;
-    margin-bottom: 32px;
     padding: 32px;
   }
 
   .reset {
     margin-top: 32px;
+  }
+
+  #game-winner {
+    color:crimson;
+    margin-top: 16px;
   }
 

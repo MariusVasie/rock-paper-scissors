@@ -16,6 +16,7 @@ const roundWinner = document.getElementById("round-winner");
 const humanRoundScore = document.getElementById("human-score");
 const computerRoundScore = document.getElementById("computer-score");
 const gameWinner = document.getElementById("game-winner");
+const resetGameText = document.getElementById("reset-game");
 humanRoundScore.textContent = humanScore;
 computerRoundScore.textContent = computerScore;
 
@@ -91,8 +92,16 @@ function playRound(e) {
 
     if  (computerScore == 5) {
         gameWinner.textContent = "Computer wins the game";
+        resetGameText.textContent = "Reset game to start again";
+        rockBtn.removeEventListener("click", playRound);
+        paperBtn.removeEventListener("click", playRound);
+        scissorsBtn.removeEventListener("click", playRound);
     } else if (humanScore == 5) {
         gameWinner.textContent = "You win the game";
+        resetGameText.textContent = "Reset game to start again";
+        rockBtn.removeEventListener("click", playRound);
+        paperBtn.removeEventListener("click", playRound);
+        scissorsBtn.removeEventListener("click", playRound);
     }
 
   }
@@ -106,6 +115,9 @@ function playRound(e) {
     computerRoundScore.textContent = computerScore;
     roundWinner.textContent = "";
     humanRoundScore.textContent = humanScore;
+    rockBtn.addEventListener("click", playRound);
+    paperBtn.addEventListener("click", playRound);
+    scissorsBtn.addEventListener("click", playRound);
   }
   
 
